@@ -38,15 +38,18 @@ class ViewController: NSViewController {
             eggTimer.duration = 360
             eggTimer.startTimer()
         }
+        configureButtonsAndMenus()
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
         eggTimer.stopTimer()
+        configureButtonsAndMenus()
     }
     
     @IBAction func resetButtonClicked(_ sender: Any) {
         eggTimer.resetTimer()
         updateDisplay(for: 360)
+        configureButtonsAndMenus()
     }
     
     
@@ -121,6 +124,36 @@ extension ViewController {
         }
         
         return NSImage(named: imageName)
+    }
+    
+    func configureButtonsAndMenus() {
+        let enableStart: Bool
+        let enableStop: Bool
+        let enableReset: Bool
+        
+        if eggTimer.isStopped {
+            enableStart = true
+            enableStop = false
+            enableReset = false
+        } else if eggTimer.isPaused {
+            enableStart = true
+            enableStop = false
+            enableReset = true
+        } else {
+            enableStart = false
+            enableStop = true
+            enableReset = false
+        }
+        
+        startButton.isEnabled = enableStart
+        stopButton.isEnabled = enableStop
+        resetButton.isEnabled = enableReset
+        
+        // NSMenuItemの更新
+        if let appDel = NSApplication.shared.delegate as? AppDelegate {
+            appDel.enableMenus(start: enableStart, stop: enableStop, reset: enableReset)
+        }
+        
     }
 }
     
