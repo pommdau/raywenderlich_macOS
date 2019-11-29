@@ -12,6 +12,7 @@
 		D0F1B8042390AE7100A32CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F1B8032390AE7100A32CBA /* Assets.xcassets */; };
 		D0F1B8072390AE7100A32CBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F1B8052390AE7100A32CBA /* Main.storyboard */; };
 		D0F1B8102390BBCD00A32CBA /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1B80F2390BBCD00A32CBA /* PrefsViewController.swift */; };
+		D0F1B8182390D3F100A32CBA /* EggTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1B8172390D3F100A32CBA /* EggTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D0F1B8082390AE7100A32CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0F1B8092390AE7100A32CBA /* EggTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggTimer.entitlements; sourceTree = "<group>"; };
 		D0F1B80F2390BBCD00A32CBA /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
+		D0F1B8172390D3F100A32CBA /* EggTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +58,39 @@
 			isa = PBXGroup;
 			children = (
 				D0F1B7FF2390AE7000A32CBA /* AppDelegate.swift */,
-				D0F1B8012390AE7000A32CBA /* ViewController.swift */,
-				D0F1B80F2390BBCD00A32CBA /* PrefsViewController.swift */,
+				D0F1B8142390D3B400A32CBA /* Model */,
+				D0F1B8122390D2A000A32CBA /* View Controllers */,
 				D0F1B8032390AE7100A32CBA /* Assets.xcassets */,
 				D0F1B8052390AE7100A32CBA /* Main.storyboard */,
+				D0F1B8132390D2C000A32CBA /* Supporting Files */,
+			);
+			path = EggTimer;
+			sourceTree = "<group>";
+		};
+		D0F1B8122390D2A000A32CBA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0F1B8012390AE7000A32CBA /* ViewController.swift */,
+				D0F1B80F2390BBCD00A32CBA /* PrefsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D0F1B8132390D2C000A32CBA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				D0F1B8082390AE7100A32CBA /* Info.plist */,
 				D0F1B8092390AE7100A32CBA /* EggTimer.entitlements */,
 			);
-			path = EggTimer;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0F1B8142390D3B400A32CBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F1B8172390D3F100A32CBA /* EggTimer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F1B8022390AE7000A32CBA /* ViewController.swift in Sources */,
+				D0F1B8182390D3F100A32CBA /* EggTimer.swift in Sources */,
 				D0F1B8102390BBCD00A32CBA /* PrefsViewController.swift in Sources */,
 				D0F1B8002390AE7000A32CBA /* AppDelegate.swift in Sources */,
 			);
