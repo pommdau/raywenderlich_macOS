@@ -44,12 +44,12 @@ class EggTimer {
         // 3 タイマーの残り時間
         let secondsRemaining = (duration - elapsedTime).rounded()
         
-        // 4 タイマーが終了した場合の処理
-        if secondsRemaining <= 0 {
+        // 4
+        if secondsRemaining <= 0 {  // タイマーが終了した場合の処理
             resetTimer()
             delegate?.timerHasFinished(self)
         } else {
-            delegate?.timeRemainingOnTimer(self, timeRemaining: secondsRemaining)
+            delegate?.timeRemainingOnTimer(self, timeRemaining: secondsRemaining)   // タイマの時間がまだ残っている場合
         }
     }
     

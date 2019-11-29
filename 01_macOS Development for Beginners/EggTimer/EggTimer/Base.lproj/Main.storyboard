@@ -76,7 +76,7 @@
                                         </menuItem>
                                         <menuItem title="Reset" keyEquivalent="r" id="yEm-6F-On0">
                                             <connections>
-                                                <action selector="resetTimerMenuItemSelectedAAA:" target="Ady-hI-5gd" id="xsW-oU-ni6"/>
+                                                <action selector="resetTimerMenuItemSelected:" target="Ady-hI-5gd" id="vTq-XG-q9o"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -293,7 +293,7 @@ DQ
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="resetTimerMenuItemSelected:" target="XfG-lQ-9wD" id="ifg-YD-wJZ"/>
+                                            <action selector="startButtonClicked:" target="XfG-lQ-9wD" id="0Gk-db-TQu"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-qJ-MWF">
@@ -303,7 +303,7 @@ DQ
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="resetTimerMenuItemSelected:" target="XfG-lQ-9wD" id="Zwp-eE-gJ9"/>
+                                            <action selector="stopButtonClicked:" target="XfG-lQ-9wD" id="FDe-nd-S8x"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-Lu-vEY">
@@ -313,7 +313,7 @@ DQ
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="resetTimerMenuItemSelected:" target="XfG-lQ-9wD" id="6lb-Gv-y4z"/>
+                                            <action selector="resetButtonClicked:" target="XfG-lQ-9wD" id="xSm-Zd-yAa"/>
                                         </connections>
                                     </button>
                                 </subviews>
