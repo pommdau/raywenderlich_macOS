@@ -720,6 +720,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="startButtonClicked:" target="XfG-lQ-9wD" id="ifg-YD-wJZ"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-qJ-MWF">
                                         <rect key="frame" x="127" y="-1" width="127" height="62"/>
@@ -727,6 +730,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="stopButtonClicked:" target="XfG-lQ-9wD" id="Zwp-eE-gJ9"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-Lu-vEY">
                                         <rect key="frame" x="254" y="-1" width="127" height="62"/>
@@ -734,6 +740,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="resetButtonClicked:" target="XfG-lQ-9wD" id="6lb-Gv-y4z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -793,6 +802,13 @@
                             <constraint firstAttribute="trailing" secondItem="glx-m9-RFi" secondAttribute="trailing" constant="20" id="ull-ga-PiW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eggImageView" destination="EJi-f1-4Tx" id="whk-bX-QCs"/>
+                        <outlet property="resetButton" destination="9Qb-Lu-vEY" id="XaY-ro-F1R"/>
+                        <outlet property="startButton" destination="40p-d4-YK4" id="vmm-79-tbM"/>
+                        <outlet property="stopButton" destination="rCh-qJ-MWF" id="VyP-Tp-cpK"/>
+                        <outlet property="timeLeftField" destination="CH0-zz-CLI" id="Tep-Bh-0UC"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
