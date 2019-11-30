@@ -17,12 +17,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var resetButton: NSButton!
     
     var eggTimer = EggTimer()
+    var prefs = Preferences()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         eggTimer.delegate = self
+        setupPrefs()
     }
 
     override var representedObject: Any? {
@@ -35,7 +37,7 @@ class ViewController: NSViewController {
         if eggTimer.isPaused {
             eggTimer.resumeTimer()
         } else {
-            eggTimer.duration = 360
+            eggTimer.duration = prefs.selectedTime
             eggTimer.startTimer()
         }
         configureButtonsAndMenus()
@@ -48,7 +50,7 @@ class ViewController: NSViewController {
     
     @IBAction func resetButtonClicked(_ sender: Any) {
         eggTimer.resetTimer()
-        updateDisplay(for: 360)
+        updateDisplay(for: prefs.selectedTime)
         configureButtonsAndMenus()
     }
     
@@ -102,7 +104,7 @@ extension ViewController {
     }
     
     private func imageToDisplay(for timeRemaining: TimeInterval) -> NSImage? {
-        let percentageComplete = 100 - (timeRemaining / 360 * 100)
+        let percentageComplete = 100 - (timeRemaining / prefs.selectedTime * 100)
         
         if eggTimer.isStopped {
             let stoppedImageName = (timeRemaining == 0) ? "100" : "stopped"
@@ -155,6 +157,52 @@ extension ViewController {
         }
         
     }
-}
     
+}
 
+// Preferences用のextension
+extension ViewController {
+    
+    // MARK: - Preferences
+    
+    // 初期設定のためのメソッド
+    func setupPrefs() {
+        updateDisplay(for: prefs.selectedTime)
+        
+        let notificationName = Notification.Name(rawValue: "PrefsChanged")
+        NotificationCenter.default.addObserver(forName: notificationName,
+                                               object: nil,
+                                               queue: nil) {
+                                                (notification) in
+                                                self.checkForResetAfterPrefsChange()
+        }
+    }
+    
+    // 更新のためのメソッド
+    func updateFromPrefs() {
+        self.eggTimer.duration = self.prefs.selectedTime
+        self.resetButtonClicked(self)
+    }
+    
+    func checkForResetAfterPrefsChange() {
+        if eggTimer.isStopped || eggTimer.isPaused {
+            updateFromPrefs()
+        } else {    // タイマが起動中の場合
+            let alert = NSAlert()
+            alert.messageText = "Reset timer with the new settings?"
+            alert.informativeText = "This will stop your current timer!"
+            alert.alertStyle = .warning
+            
+            // 3
+            alert.addButton(withTitle: "Reset")
+            alert.addButton(withTitle: "Cancel")
+            
+            // 4
+            let response = alert.runModal()
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.updateFromPrefs()
+            }
+        }
+    }
+    
+}
