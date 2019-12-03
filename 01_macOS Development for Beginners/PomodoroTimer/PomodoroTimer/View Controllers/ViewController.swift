@@ -35,24 +35,33 @@ class ViewController: NSViewController {
     // MARK:- IBActions - buttons
     
     @IBAction func startButtonClicked(_ sender: Any) {
-
+        if pomodoroTimer.isPaused {
+            pomodoroTimer.resumeTimer()
+        } else {
+            pomodoroTimer.duration = 360 // TODO:change
+            pomodoroTimer.startTimer()
+        }
+        configureButtonsAndMenus()
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
-        
+        pomodoroTimer.stopTimer()
+        configureButtonsAndMenus()
     }
     
     @IBAction func restartButtonClicked(_ sender: Any) {
-        
+        pomodoroTimer.resetTimer()
+        updateDisplay(for: 360) // TODO:fix
+        configureButtonsAndMenus()
     }
     
     @IBAction func skipButtonClicked(_ sender: Any) {
-        
+        // TODO: implement
+        configureButtonsAndMenus()
     }
     
     
     // MARK: - IBActions - menus
-    
     @IBAction func startTimerMenuItemSelected(_ sender: Any) {
         startButtonClicked(sender)
     }
@@ -73,6 +82,7 @@ class ViewController: NSViewController {
 extension ViewController {
     
     // MARK:- Display
+    
     func updateDisplay(for timeRemaining: TimeInterval) {
         timeLeftField.stringValue = textToDisplay(for: timeRemaining)
     }
@@ -90,6 +100,41 @@ extension ViewController {
         let timeRemainingDisplay = "\(Int(minutesRemaining)):\(secondsDisplay)"
         
         return timeRemainingDisplay
+    }
+    
+    // メインウィンドウのボタンとメニューバーの
+    func configureButtonsAndMenus() {
+        let enableStart: Bool
+        let enableStop : Bool
+        let enableReset: Bool
+        let enableSkip : Bool
+        
+        if pomodoroTimer.isStopped {
+            enableStart = true
+            enableStop  = false
+            enableReset = false
+            enableSkip  = true
+        } else if pomodoroTimer.isPaused {
+            enableStart = true
+            enableStop  = false
+            enableReset = true
+            enableSkip  = true
+        } else {    // タイマーが稼働中
+            enableStart = false
+            enableStop  = true
+            enableReset = false
+            enableSkip  = true
+        }
+        
+        startButton.isEnabled   = enableStart
+        stopButton.isEnabled    = enableStop
+        restartButton.isEnabled = enableReset
+        skipButton.isEnabled    = enableSkip
+        
+        if let appDel = NSApplication.shared.delegate as? AppDelegate {
+            appDel.enableMenus(start: enableStart, stop: enableStop, reset: enableReset, skip: enableSkip)
+        }
+        
     }
 }
 

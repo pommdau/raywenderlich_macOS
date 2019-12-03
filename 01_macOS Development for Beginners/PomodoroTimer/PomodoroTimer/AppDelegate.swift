@@ -25,6 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-
+    func enableMenus(start: Bool, stop: Bool, reset: Bool, skip: Bool) {
+        startTimerMenuItem.isEnabled = start
+        stopTimerMenuItem.isEnabled = stop
+        restartTimerMenuItem.isEnabled = reset
+        skipTimerMenuItem.isEnabled = skip
+    }
 }
 
