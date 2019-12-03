@@ -191,7 +191,96 @@
                     <view key="view" id="E0K-xC-eDM">
                         <rect key="frame" x="0.0" y="0.0" width="416" height="214"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-to-Mnd">
+                                <rect key="frame" x="343" y="13" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SYQ-dq-0Kj">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="okButtonClicked:" target="DML-GK-9GJ" id="7D9-Ru-60A"/>
+                                </connections>
+                            </button>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfo-OX-h6a">
+                                <rect key="frame" x="18" y="152" width="380" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="25" maxValue="30" doubleValue="25" tickMarkPosition="above" numberOfTickMarks="6" allowsTickMarkValuesOnly="YES" sliderType="linear" id="l5T-kL-5dE"/>
+                                <connections>
+                                    <action selector="taskSliderValueChanged:" target="DML-GK-9GJ" id="a4w-ve-Eh7"/>
+                                </connections>
+                            </slider>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ozj-Mz-NCG">
+                                <rect key="frame" x="18" y="104" width="380" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="5" maxValue="10" doubleValue="5" tickMarkPosition="above" numberOfTickMarks="6" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Bng-Bq-HAO"/>
+                                <connections>
+                                    <action selector="intervalSliderValueChanged:" target="DML-GK-9GJ" id="k6D-qz-afA"/>
+                                </connections>
+                            </slider>
+                            <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Nj-7Z-cJ5">
+                                <rect key="frame" x="18" y="56" width="380" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <sliderCell key="cell" state="on" alignment="left" minValue="5" maxValue="30" doubleValue="25" tickMarkPosition="above" numberOfTickMarks="26" allowsTickMarkValuesOnly="YES" sliderType="linear" id="AIB-Kq-eh7"/>
+                                <connections>
+                                    <action selector="longIntervalSliderValueChanged:" target="DML-GK-9GJ" id="DDo-Nx-zr3"/>
+                                </connections>
+                            </slider>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pD-c6-tOk">
+                                <rect key="frame" x="18" y="177" width="103" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Task: 25minutes" id="dW0-x6-CEZ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLq-Af-yex">
+                                <rect key="frame" x="18" y="129" width="113" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Interval: 5minutes" id="0PL-rY-JwH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgJ-oT-y2D">
+                                <rect key="frame" x="18" y="81" width="154" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Long Interval: 25minutes" id="gGh-Au-iRK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lds-hn-Px5">
+                                <rect key="frame" x="14" y="13" width="82" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W64-9z-5ur">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" target="DML-GK-9GJ" id="LEw-Ys-G46"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="intervalLabel" destination="JLq-Af-yex" id="0gO-wY-hWf"/>
+                        <outlet property="intervalSlider" destination="Ozj-Mz-NCG" id="DHb-Rh-vBV"/>
+                        <outlet property="longIntervalLabel" destination="FgJ-oT-y2D" id="0yS-Tn-I6r"/>
+                        <outlet property="longIntervalSlider" destination="6Nj-7Z-cJ5" id="Hl1-pA-vQV"/>
+                        <outlet property="taskLabel" destination="4pD-c6-tOk" id="BQ7-OD-uru"/>
+                        <outlet property="taskSlider" destination="Hfo-OX-h6a" id="bgH-Aa-Bso"/>
+                    </connections>
                 </viewController>
                 <customObject id="9Uv-cn-st0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
