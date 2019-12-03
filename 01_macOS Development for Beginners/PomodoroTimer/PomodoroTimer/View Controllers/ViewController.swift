@@ -16,10 +16,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var restartButton: NSButton!
     @IBOutlet weak var skipButton: NSButton!
 
+    var pomodoroTimer = PomodoroTimer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        pomodoroTimer.delegate = self
     }
 
     override var representedObject: Any? {
@@ -67,3 +70,39 @@ class ViewController: NSViewController {
     }
 }
 
+extension ViewController {
+    
+    // MARK:- Display
+    func updateDisplay(for timeRemaining: TimeInterval) {
+        timeLeftField.stringValue = textToDisplay(for: timeRemaining)
+    }
+    
+    // ここでのみ使用するのでprivate
+    private func textToDisplay(for timeRemaining: TimeInterval) -> String {
+        if timeRemaining == 0 { // タイマが終了している場合はDone!を表示する
+            return "Done!"
+        }
+        
+        let minutesRemaining = floor(timeRemaining / 60)
+        let secondsRemaining = timeRemaining - (minutesRemaining * 60)
+
+        let secondsDisplay = String(format: "%02d", Int(secondsRemaining))
+        let timeRemainingDisplay = "\(Int(minutesRemaining)):\(secondsDisplay)"
+        
+        return timeRemainingDisplay
+    }
+}
+
+
+// MARK:- PomodoroTimerProtocol Methods
+
+extension ViewController: PomodoroTimerProtocol {
+    func timeRemainingOnTimer(_ timer: PomodoroTimer,
+                              timeRemaining: TimeInterval) {
+        updateDisplay(for: timeRemaining)
+    }
+    
+    func timerHasFinished(_ timer: PomodoroTimer) {
+        updateDisplay(for: 0)
+    }
+}
