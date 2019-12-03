@@ -11,7 +11,11 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    @IBOutlet weak var startTimerMenuItem: NSMenuItem!
+    @IBOutlet weak var stopTimerMenuItem: NSMenuItem!
+    @IBOutlet weak var restartTimerMenuItem: NSMenuItem!
+    @IBOutlet weak var skipTimerMenuItem: NSMenuItem!
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

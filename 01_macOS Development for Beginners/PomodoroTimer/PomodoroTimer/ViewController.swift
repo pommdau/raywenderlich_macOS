@@ -27,7 +27,10 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
+    
+    
+    // MARK:- IBActions - buttons
+    
     @IBAction func startButtonClicked(_ sender: Any) {
 
     }
@@ -36,7 +39,7 @@ class ViewController: NSViewController {
         
     }
     
-    @IBAction func resetButtonClicked(_ sender: Any) {
+    @IBAction func restartButtonClicked(_ sender: Any) {
         
     }
     
@@ -45,5 +48,22 @@ class ViewController: NSViewController {
     }
     
     
+    // MARK: - IBActions - menus
+    
+    @IBAction func startTimerMenuItemSelected(_ sender: Any) {
+        startButtonClicked(sender)
+    }
+    
+    @IBAction func stopTimerMenuItemSelected(_ sender: Any) {
+        stopButtonClicked(sender)
+    }
+    
+    @IBAction func restartTimerMenuItemSelected(_ sender: Any) {
+        restartButtonClicked(sender)
+    }
+    
+    @IBAction func skipTimerMenuItemSelected(_ sender: Any) {
+        skipButtonClicked(sender)
+    }
 }
 
