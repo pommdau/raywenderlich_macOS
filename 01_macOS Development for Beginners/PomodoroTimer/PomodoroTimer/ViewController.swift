@@ -28,6 +28,22 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func startButtonClicked(_ sender: Any) {
 
+    }
+    
+    @IBAction func stopButtonClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func resetButtonClicked(_ sender: Any) {
+        
+    }
+    
+    @IBAction func skipButtonClicked(_ sender: Any) {
+        
+    }
+    
+    
 }
 

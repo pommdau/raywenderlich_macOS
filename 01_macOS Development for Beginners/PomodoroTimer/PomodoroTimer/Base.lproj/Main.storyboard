@@ -728,7 +728,7 @@
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="35a-tf-ayT">
                                         <rect key="frame" x="218" y="-1" width="109" height="62"/>
-                                        <buttonCell key="cell" type="smallSquare" title="ReStart" bezelStyle="smallSquare" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kDe-yZ-LGn">
+                                        <buttonCell key="cell" type="smallSquare" title="Restart" bezelStyle="smallSquare" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kDe-yZ-LGn">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system" size="24"/>
                                         </buttonCell>
@@ -777,6 +777,13 @@
                             <constraint firstAttribute="bottom" secondItem="NPC-kM-a0e" secondAttribute="bottom" id="rbZ-0g-1xv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="restartButton" destination="35a-tf-ayT" id="V1u-44-8Rr"/>
+                        <outlet property="skipButton" destination="SYs-Jz-pZv" id="feS-Ec-FkN"/>
+                        <outlet property="startButton" destination="Ef0-sy-NfD" id="Kof-VX-NuJ"/>
+                        <outlet property="stopButton" destination="UmO-hs-vo9" id="hg2-qj-Wu8"/>
+                        <outlet property="timeLeftField" destination="kxc-kn-hb6" id="6Vr-en-1P9"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
