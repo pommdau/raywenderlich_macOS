@@ -22,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="aFq-qR-aQd" kind="show" id="CiP-Ji-fm6"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -158,6 +162,40 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="51" y="177"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="OnV-p1-9NG">
+            <objects>
+                <windowController id="aFq-qR-aQd" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="kwt-Qd-uou">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="416" height="214"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="aFq-qR-aQd" id="lqp-v4-02q"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="DML-GK-9GJ" kind="relationship" relationship="window.shadowedContentViewController" id="7Vn-KO-Dpi"/>
+                    </connections>
+                </windowController>
+                <customObject id="c2O-5i-rEE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="76"/>
+        </scene>
+        <!--Prefs View Controller-->
+        <scene sceneID="WRW-Ha-WgJ">
+            <objects>
+                <viewController id="DML-GK-9GJ" customClass="PrefsViewController" customModule="PomodoroTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="E0K-xC-eDM">
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="214"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="9Uv-cn-st0" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="440"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
