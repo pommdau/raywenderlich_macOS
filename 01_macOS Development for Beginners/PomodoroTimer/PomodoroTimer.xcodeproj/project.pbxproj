@@ -55,15 +55,39 @@
 		2A39A6E72392539500CA2D55 /* PomodoroTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D0DD74292396189B005F6E03 /* Model */,
 				2A39A6E82392539500CA2D55 /* AppDelegate.swift */,
-				D0DD74262396060C005F6E03 /* PrefsViewController.swift */,
-				2A39A6EA2392539500CA2D55 /* ViewController.swift */,
+				D0DD74282396187B005F6E03 /* View Controllers */,
 				2A39A6EC2392539A00CA2D55 /* Assets.xcassets */,
 				2A39A6EE2392539A00CA2D55 /* Main.storyboard */,
+				D0DD742B23961935005F6E03 /* SupportingFiles */,
+			);
+			path = PomodoroTimer;
+			sourceTree = "<group>";
+		};
+		D0DD74282396187B005F6E03 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0DD74262396060C005F6E03 /* PrefsViewController.swift */,
+				2A39A6EA2392539500CA2D55 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D0DD74292396189B005F6E03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0DD742B23961935005F6E03 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				2A39A6F12392539A00CA2D55 /* Info.plist */,
 				2A39A6F22392539A00CA2D55 /* PomodoroTimer.entitlements */,
 			);
-			path = PomodoroTimer;
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
