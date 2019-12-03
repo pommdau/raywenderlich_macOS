@@ -10,6 +10,12 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var timeLeftField: NSTextField!
+    @IBOutlet weak var startButton: NSButton!
+    @IBOutlet weak var stopButton: NSButton!
+    @IBOutlet weak var restartButton: NSButton!
+    @IBOutlet weak var skipButton: NSButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
