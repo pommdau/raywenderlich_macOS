@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class ViewController: NSViewController {
 
@@ -18,6 +19,7 @@ class ViewController: NSViewController {
 
     var pomodoroTimer = PomodoroTimer()
     var prefs = Preferences()
+    var soundPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class ViewController: NSViewController {
             pomodoroTimer.startTimer()
         }
         configureButtonsAndMenus()
+        prepareSound()
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
@@ -186,6 +189,29 @@ extension ViewController {
     }
 }
 
+extension ViewController {
+    
+    
+    // MARK: - Sound
+    
+    func prepareSound() {
+        guard let audioFileUrl = Bundle.main.url(forResource: "ding", withExtension: "mp3") else {
+            return
+        }
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+            soundPlayer?.prepareToPlay()
+        } catch {
+            print("Sound player not available: \(error)")
+        }
+    }
+    
+    func playSound() {
+        soundPlayer?.play()
+    }
+}
+
 
 // MARK:- PomodoroTimerProtocol Methods
 
@@ -197,5 +223,6 @@ extension ViewController: PomodoroTimerProtocol {
     
     func timerHasFinished(_ timer: PomodoroTimer) {
         updateDisplay(for: 0)
+        playSound()
     }
 }
