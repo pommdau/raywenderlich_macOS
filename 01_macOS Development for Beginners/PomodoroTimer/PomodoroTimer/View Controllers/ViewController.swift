@@ -17,12 +17,14 @@ class ViewController: NSViewController {
     @IBOutlet weak var skipButton: NSButton!
 
     var pomodoroTimer = PomodoroTimer()
+    var prefs = Preferences()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         pomodoroTimer.delegate = self
+        setupPrefs()
     }
 
     override var representedObject: Any? {
@@ -38,7 +40,7 @@ class ViewController: NSViewController {
         if pomodoroTimer.isPaused {
             pomodoroTimer.resumeTimer()
         } else {
-            pomodoroTimer.duration = 360 // TODO:change
+            pomodoroTimer.duration = prefs.taskTime
             pomodoroTimer.startTimer()
         }
         configureButtonsAndMenus()
@@ -51,7 +53,7 @@ class ViewController: NSViewController {
     
     @IBAction func restartButtonClicked(_ sender: Any) {
         pomodoroTimer.resetTimer()
-        updateDisplay(for: 360) // TODO:fix
+        updateDisplay(for: prefs.taskTime)
         configureButtonsAndMenus()
     }
     
@@ -135,6 +137,52 @@ extension ViewController {
             appDel.enableMenus(start: enableStart, stop: enableStop, reset: enableReset, skip: enableSkip)
         }
         
+    }
+}
+
+extension ViewController {
+    
+    // MARK:- Preferences
+    
+    // 設定に関する初期設定
+    func setupPrefs() {
+        updateDisplay(for: prefs.taskTime)
+        
+        let notificationName = Notification.Name(rawValue: "PrefsChanged")
+        NotificationCenter.default.addObserver(forName: notificationName,
+                                               object: nil, queue: nil) {
+                                                (Notification) in
+                                                self.checkForResetAfterPrefsChange()
+        }
+        
+    }
+    
+    func updateFromPrefs() {
+        self.pomodoroTimer.duration = self.prefs.taskTime
+        self.restartButtonClicked(self)
+    }
+    
+    func checkForResetAfterPrefsChange() {
+        if pomodoroTimer.isStopped || pomodoroTimer.isPaused {
+            // 1
+            updateFromPrefs()
+        } else {
+            // 2
+            let alert = NSAlert()
+            alert.messageText = "Reset timer with the new settings?"
+            alert.informativeText = "This will stop your current timer!"
+            alert.alertStyle = .warning
+            
+            // 3
+            alert.addButton(withTitle: "Reset")
+            alert.addButton(withTitle: "Cancel")
+            
+            // 4
+            let response = alert.runModal()
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.updateFromPrefs()
+            }
+        }
     }
 }
 
