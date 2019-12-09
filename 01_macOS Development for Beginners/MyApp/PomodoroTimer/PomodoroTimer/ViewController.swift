@@ -10,6 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var timeLeftField: NSTextField!
+    @IBOutlet weak var leftButton: NSButton!
+    @IBOutlet weak var rightButton: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,21 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func leftButtonClicked(_ sender: Any) {
+    }
+    
+    @IBAction func rightButtonClicked(_ sender: Any) {
+    }
+    
+    
+    // MARK: - IBActions - menus
+    
+    @IBAction func startTimerMenuItemSelected(_ sender: Any) {
+        leftButtonClicked(sender)
+    }
+    
+    @IBAction func stopTimerMenuItemSelected(_ sender: Any) {
+        rightButtonClicked(sender)
+    }
 }
 
