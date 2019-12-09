@@ -11,6 +11,7 @@
 		D0AA5C4B239E209600D31722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA5C4A239E209600D31722 /* ViewController.swift */; };
 		D0AA5C4D239E209800D31722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0AA5C4C239E209800D31722 /* Assets.xcassets */; };
 		D0AA5C50239E209800D31722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0AA5C4E239E209800D31722 /* Main.storyboard */; };
+		D0AA5C5A239E313100D31722 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AA5C58239E313100D31722 /* PrefsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		D0AA5C4F239E209800D31722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0AA5C51239E209800D31722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0AA5C52239E209800D31722 /* PomodoroTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTimer.entitlements; sourceTree = "<group>"; };
+		D0AA5C58239E313100D31722 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D0AA5C4A239E209600D31722 /* ViewController.swift */,
 				D0AA5C4C239E209800D31722 /* Assets.xcassets */,
 				D0AA5C4E239E209800D31722 /* Main.storyboard */,
+				D0AA5C58239E313100D31722 /* PrefsViewController.swift */,
 				D0AA5C51239E209800D31722 /* Info.plist */,
 				D0AA5C52239E209800D31722 /* PomodoroTimer.entitlements */,
 			);
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0AA5C4B239E209600D31722 /* ViewController.swift in Sources */,
+				D0AA5C5A239E313100D31722 /* PrefsViewController.swift in Sources */,
 				D0AA5C49239E209600D31722 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
