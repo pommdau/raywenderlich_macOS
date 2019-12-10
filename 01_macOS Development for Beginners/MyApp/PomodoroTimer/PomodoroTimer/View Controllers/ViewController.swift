@@ -16,6 +16,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var statusLabel: NSTextField!
     
     var pomodoroTimer = PomodoroTimer()
+    var prefs = Preferences()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class ViewController: NSViewController {
         
         updateDisplay(for: pomodoroTimer.duration)
         configureButtonsAndMenus()
+        
+        setupPrefs()    // 設定画面
     }
 
     override var representedObject: Any? {
@@ -172,4 +175,53 @@ extension ViewController {
     }
 }
 
+extension ViewController {
+    
+    // MARK:- Preferences
+    
+    func setupPrefs() {
+        self.pomodoroTimer.taskDuration        = self.prefs.taskDuration
+        self.pomodoroTimer.intervalDuration    = self.prefs.intervalDuration
+        self.pomodoroTimer.longIntervaluration = self.prefs.longIntervalDuration
+        updateDisplay(for: pomodoroTimer.duration)
+        
+        let notificationName = Notification.Name(rawValue: "PrefsChanged")
+        NotificationCenter.default.addObserver(forName: notificationName,
+                                               object: nil, queue: nil) {
+                                                (notification) in
+                                                self.checkForResetAfterPrefsChange()
+        }
+    }
+    
+    func updateFromPrefs() {
+        self.pomodoroTimer.taskDuration        = self.prefs.taskDuration
+        self.pomodoroTimer.intervalDuration    = self.prefs.intervalDuration
+        self.pomodoroTimer.longIntervaluration = self.prefs.longIntervalDuration
+        
+        // 変更したら一律タイマーを止めちゃうよ。本当は細かく実装するべきかな…？
+        pomodoroTimer.resetTimer()
+        configureButtonsAndMenus()
+        updateDisplay(for: pomodoroTimer.duration)
+    }
+    
+    func checkForResetAfterPrefsChange() {
+        if pomodoroTimer.isStopped || pomodoroTimer.isPaused {
+            updateFromPrefs()
+        } else {
+
+            let alert = NSAlert()
+            alert.messageText = "Reset timer with the new settings?"
+            alert.informativeText = "This will stop your current timer!"
+            alert.alertStyle = .warning
+            
+            alert.addButton(withTitle: "Reset")
+            alert.addButton(withTitle: "Cancel")
+            
+            let response = alert.runModal()
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.updateFromPrefs()
+            }
+        }
+    }
+}
 
