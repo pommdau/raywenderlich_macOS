@@ -135,10 +135,6 @@ extension ViewController {
     }
     
     func configureButtonsAndMenus() {
-//
-//        if let appDel = NSApplication.shared().delegate as? AppDelegate {
-//            appDel.enableMenus(start: enableStart, stop: enableStop, reset: enableReset)
-//        }
         
         rightButton.isEnabled = true
         leftButton.isEnabled  = true
@@ -169,10 +165,11 @@ extension ViewController {
                 rightButton.title = "Skip"
             }
         }
+        
+        if let appDel = NSApplication.shared.delegate as? AppDelegate {
+            appDel.configureMenus(leftTitle: leftButton.title, rightTitle: rightButton.title)
+        }
     }
-    
-    
-    
 }
 
 

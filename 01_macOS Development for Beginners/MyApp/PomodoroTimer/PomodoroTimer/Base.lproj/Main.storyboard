@@ -122,8 +122,8 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PomodoroTimer" customModuleProvider="target">
                     <connections>
-                        <outlet property="leftTimerMenuItem" destination="X31-PM-x0E" id="Wlf-Uo-w2z"/>
-                        <outlet property="rightTimerMenuItem" destination="xum-tX-MXL" id="whe-e6-MEP"/>
+                        <outlet property="leftTimerMenuItem" destination="X31-PM-x0E" id="kmk-RS-JHO"/>
+                        <outlet property="rightTimerMenuItem" destination="xum-tX-MXL" id="1xF-HG-ho8"/>
                     </connections>
                 </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>

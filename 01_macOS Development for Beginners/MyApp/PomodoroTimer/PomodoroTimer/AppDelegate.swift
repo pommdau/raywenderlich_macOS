@@ -11,7 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var leftTimerMenuItem: NSMenuItem!
+    @IBOutlet weak var leftTimerMenuItem : NSMenuItem!
     @IBOutlet weak var rightTimerMenuItem: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -21,7 +21,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-
+    
+    func configureMenus(leftTitle: String, rightTitle: String) {
+        leftTimerMenuItem.title  = leftTitle
+        rightTimerMenuItem.title = rightTitle
+    }
 }
 
