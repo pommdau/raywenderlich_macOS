@@ -14,6 +14,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var leftButton: NSButton!
     @IBOutlet weak var rightButton: NSButton!
     @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet weak var pomodoroCountLabel: NSTextField!
     
     var pomodoroTimer = PomodoroTimer()
     
@@ -23,6 +24,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         pomodoroTimer.delegate = self
         
+        updateDisplay(for: pomodoroTimer.duration)
         configureButtonsAndMenus()
     }
 
@@ -107,7 +109,16 @@ extension ViewController {
     func updateDisplay(for timeRemaining: TimeInterval) {
         timeLeftField.stringValue = textToDisplay(for: timeRemaining)
         
+        switch pomodoroTimer.timerMode {
+        case .task:
+            statusLabel.stringValue = "Task"
+        case .interval:
+            statusLabel.stringValue = "Interval"
+        case .longInterval :
+            statusLabel.stringValue = "Long Interval"
+        }
         
+        pomodoroCountLabel.stringValue = "#\(pomodoroTimer.pomodoroCount)"
     }
     
     // 残り時間の表示文字列の作成
@@ -126,27 +137,6 @@ extension ViewController {
     }
     
     func configureButtonsAndMenus() {
-//        let enableStart: Bool
-//        let enableStop: Bool
-//        let enableReset: Bool
-//
-//        if eggTimer.isStopped {
-//            enableStart = true
-//            enableStop = false
-//            enableReset = false
-//        } else if eggTimer.isPaused {
-//            enableStart = true
-//            enableStop = false
-//            enableReset = true
-//        } else {
-//            enableStart = false
-//            enableStop = true
-//            enableReset = false
-//        }
-//
-//        startButton.isEnabled = enableStart
-//        stopButton.isEnabled = enableStop
-//        resetButton.isEnabled = enableReset
 //
 //        if let appDel = NSApplication.shared().delegate as? AppDelegate {
 //            appDel.enableMenus(start: enableStart, stop: enableStop, reset: enableReset)
@@ -155,7 +145,6 @@ extension ViewController {
         rightButton.isEnabled = true
         leftButton.isEnabled  = true
         switch pomodoroTimer.timerMode {
-        
         case .task:
             if pomodoroTimer.isPaused {         // 一時停止中
                 leftButton.title  = "Resume"
