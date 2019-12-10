@@ -46,16 +46,18 @@ class PomodoroTimer {
     var delegate: PomodoroTimerProtocol?
     
     @objc dynamic func timerAction() {
+        // タイマーがない場合は実行しない
         guard let startTime = startTime else {
-            return
+            delegate?.timerHasFinished(self)
+            return  // 残り時間に関係なく、タイマーを終了する場合の処理
         }
         
-        elapsedTime = -startTime.timeIntervalSinceNow
+        elapsedTime = -startTime.timeIntervalSinceNow   // 経過時間
         
-        let secondsRemaining = (duration - elapsedTime).rounded()
+        let secondsRemaining = (duration - elapsedTime).rounded()   // 残り時間
         
-        if secondsRemaining <= 0 {
-            resetTimer()
+        if secondsRemaining <= 0 {  // タイマーが完了した場合
+            completeTimer()
             delegate?.timerHasFinished(self)
         } else {
             delegate?.timeRemainingOnTimer(self, timeRemaining: secondsRemaining)
@@ -74,6 +76,7 @@ class PomodoroTimer {
         timerAction()
     }
     
+    // 再開
     func resumeTimer() {
         startTime = Date(timeIntervalSinceNow: -elapsedTime)
         
@@ -85,8 +88,7 @@ class PomodoroTimer {
         timerAction()
     }
     
-    // 3
-    func stopTimer() {
+    func pauseTimer() {
         // really just pauses the timer
         timer?.invalidate()
         timer = nil
@@ -94,19 +96,40 @@ class PomodoroTimer {
         timerAction()
     }
     
-    // 4
     func resetTimer() {
+        // stop the timer & reset back to start
         // stop the timer & reset back to start
         timer?.invalidate()
         timer = nil
         
         startTime = nil
-        taskDuration = 25 * 60
         elapsedTime = 0
         
         timerAction()
     }
     
+    // タイマーを完了にする
+    func completeTimer() {
+        // stop the timer & reset back to start
+        timer?.invalidate()
+        timer = nil
+        
+        startTime = nil
+        elapsedTime = 0
+        
+        if (timerMode == TimerMode.task) {  // タスクを完了にする場合
+            pomodoroCount += 1
+            if (pomodoroCount % 4 == 0) {
+                timerMode = TimerMode.longInterval  // ロングインターバルへ移行
+            } else {
+                timerMode = TimerMode.interval
+            }
+        } else {    // インターバルを終了する場合
+            timerMode = TimerMode.task
+        }
+        
+        timerAction()
+    }
 }
 
 protocol PomodoroTimerProtocol {
