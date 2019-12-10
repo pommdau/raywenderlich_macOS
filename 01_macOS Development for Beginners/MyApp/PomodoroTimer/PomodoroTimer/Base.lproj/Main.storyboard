@@ -244,9 +244,9 @@ Gw
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="intervalTimeTextField" destination="K7j-AM-Qrd" id="ag4-TW-aPk"/>
-                        <outlet property="longIntervalTimeTextField" destination="63T-XE-RUG" id="Mcs-k2-Csb"/>
-                        <outlet property="tastTimeTextField" destination="5JA-HD-qIO" id="FcK-k2-jPV"/>
+                        <outlet property="intervalDurationTextField" destination="K7j-AM-Qrd" id="ag4-TW-aPk"/>
+                        <outlet property="longIntervalDurationTextField" destination="63T-XE-RUG" id="Mcs-k2-Csb"/>
+                        <outlet property="taskDurationTextField" destination="5JA-HD-qIO" id="FcK-k2-jPV"/>
                     </connections>
                 </viewController>
                 <customObject id="Ggg-DE-XZE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
