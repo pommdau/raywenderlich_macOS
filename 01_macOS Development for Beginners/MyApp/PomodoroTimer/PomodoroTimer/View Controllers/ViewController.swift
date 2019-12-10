@@ -14,7 +14,6 @@ class ViewController: NSViewController {
     @IBOutlet weak var leftButton: NSButton!
     @IBOutlet weak var rightButton: NSButton!
     @IBOutlet weak var statusLabel: NSTextField!
-    @IBOutlet weak var pomodoroCountLabel: NSTextField!
     
     var pomodoroTimer = PomodoroTimer()
     
@@ -111,14 +110,12 @@ extension ViewController {
         
         switch pomodoroTimer.timerMode {
         case .task:
-            statusLabel.stringValue = "Task"
+            statusLabel.stringValue = "Pomodoro #\(pomodoroTimer.pomodoroCount)"
         case .interval:
             statusLabel.stringValue = "Interval"
         case .longInterval :
             statusLabel.stringValue = "Long Interval"
         }
-        
-        pomodoroCountLabel.stringValue = "#\(pomodoroTimer.pomodoroCount)"
     }
     
     // 残り時間の表示文字列の作成
@@ -130,8 +127,9 @@ extension ViewController {
         let minutesRemaining = floor(timeRemaining / 60)
         let secondsRemaining = timeRemaining - (minutesRemaining * 60)
         
+        let minutesDisplay = String(format: "%02d", Int(minutesRemaining))
         let secondsDisplay = String(format: "%02d", Int(secondsRemaining))
-        let timeRemainingDisplay = "\(Int(minutesRemaining)):\(secondsDisplay)"
+        let timeRemainingDisplay = "\(minutesDisplay):\(secondsDisplay)"
         
         return timeRemainingDisplay
     }

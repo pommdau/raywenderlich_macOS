@@ -21,7 +21,7 @@ class PomodoroTimer {
     var intervalDuration    : TimeInterval = 5  * 60 // インターバル
     var longIntervaluration : TimeInterval = 15 * 60 // ロングインターバル
     var elapsedTime         : TimeInterval = 0
-    var pomodoroCount       : Int          = 0       // 現在のポモドーロ数(4の倍数の後にロングインターバル)
+    var pomodoroCount       : Int          = 1       // 現在のポモドーロ数(4の倍数の後にロングインターバル)
     var timerMode           : TimerMode    = TimerMode.task
     
     var isStopped: Bool {
