@@ -82,6 +82,12 @@ class ViewController: NSViewController {
         configureButtonsAndMenus()
     }
     
+    @IBAction func resetCountButtonClicked(_ sender: Any) {
+        pomodoroTimer.pomodoroCount = 1
+        pomodoroTimer.resetTimer()
+        updateDisplay(for: pomodoroTimer.duration)
+    }
+    
     
     // MARK: - IBActions - menus
     
