@@ -98,7 +98,6 @@ class PomodoroTimer {
     
     func resetTimer() {
         // stop the timer & reset back to start
-        // stop the timer & reset back to start
         timer?.invalidate()
         timer = nil
         
@@ -119,7 +118,7 @@ class PomodoroTimer {
         
         if (timerMode == TimerMode.task) {  // タスクを完了にする場合
             pomodoroCount += 1
-            if (pomodoroCount % 4 == 0) {
+            if (pomodoroCount > 4 && pomodoroCount % 4 == 1) {
                 timerMode = TimerMode.longInterval  // ロングインターバルへ移行
             } else {
                 timerMode = TimerMode.interval
