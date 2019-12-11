@@ -107,6 +107,8 @@ extension ViewController: PomodoroTimerProtocol {
     
     func timerHasFinished(_ timer: PomodoroTimer) {
         updateDisplay(for: pomodoroTimer.duration)
+        configureButtonsAndMenus()
+        postCompletingNotification()
     }
 }
 
@@ -231,3 +233,50 @@ extension ViewController {
     }
 }
 
+extension ViewController: NSUserNotificationCenterDelegate {
+    
+    // MARK: - Finish Notification
+    
+    func postCompletingNotification() {
+        let notification = NSUserNotification()
+        notification.identifier = createNotificationIdentifier()
+        switch pomodoroTimer.timerMode {
+        case .interval, .longInterval:
+            notification.title    = "Complete working!"
+            notification.subtitle = "It's time to break"
+        case .task:
+            notification.title    = "Finish interval!"
+            notification.subtitle = "It's time to work"
+        }
+        notification.soundName = NSUserNotificationDefaultSoundName
+        
+        // Manually display the notification
+        let notificationCenter = NSUserNotificationCenter.default
+        notificationCenter.delegate = self
+        notificationCenter.deliver(notification)
+    }
+    
+    func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {
+        print("通知を受け取りました。")
+    }
+    
+    func userNotificationCenter(_ center: NSUserNotificationCenter, didActivate notification: NSUserNotification) {
+        center.removeDeliveredNotification(notification)
+        print("通知を削除しました")
+    }
+    
+//    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+//        return true
+//    }
+    
+    // 日付を表示する
+    // e.g. 2019/12/11 14:11:32
+    func createNotificationIdentifier() -> String {
+        let f = DateFormatter()
+        f.timeStyle = .medium
+        f.dateStyle = .medium
+        f.locale = Locale(identifier: "ja_JP")
+        let now = Date()
+        return "ikeh1024_\(f.string(from: now))"
+    }
+}
