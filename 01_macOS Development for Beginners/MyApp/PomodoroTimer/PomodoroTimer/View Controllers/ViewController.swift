@@ -10,10 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    @IBOutlet weak var timeLeftField: NSTextField!
-    @IBOutlet weak var leftButton: NSButton!
-    @IBOutlet weak var rightButton: NSButton!
-    @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet weak var timeLeftField : NSTextField!
+    @IBOutlet weak var leftButton    : NSButton!
+    @IBOutlet weak var rightButton   : NSButton!
+    @IBOutlet weak var statusLabel   : NSTextField!
     
     var pomodoroTimer = PomodoroTimer()
     var prefs = Preferences()
@@ -50,7 +50,6 @@ class ViewController: NSViewController {
             if pomodoroTimer.isPaused {         // 一時停止中
                 pomodoroTimer.resumeTimer()
             } else if pomodoroTimer.isStopped { // 計測前
-                print("（Error）ここは通らないようにする")
                 pomodoroTimer.startTimer()
             } else {                            // 計測中
                 pomodoroTimer.pauseTimer()
@@ -218,7 +217,7 @@ extension ViewController {
         } else {
 
             let alert = NSAlert()
-            alert.messageText = "Reset timer with the new settings?"
+            alert.messageText     = "Reset timer with the new settings?"
             alert.informativeText = "This will stop your current timer!"
             alert.alertStyle = .warning
             
@@ -265,12 +264,13 @@ extension ViewController: NSUserNotificationCenterDelegate {
         print("通知を削除しました")
     }
     
+    // アクティブ時にも通知を行いたい場合にコメントアウトする
 //    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
 //        return true
 //    }
     
-    // 日付を表示する
-    // e.g. 2019/12/11 14:11:32
+    // 通知用のidentifierを作成する
+    // e.g. ikeh1024_2019/12/11 14:11:32
     func createNotificationIdentifier() -> String {
         let f = DateFormatter()
         f.timeStyle = .medium
