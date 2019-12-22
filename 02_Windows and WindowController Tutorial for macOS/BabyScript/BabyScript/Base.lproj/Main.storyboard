@@ -86,6 +86,11 @@
                                                 <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Word Count" keyEquivalent="k" id="dSK-0s-K1u">
+                                            <connections>
+                                                <action selector="showWordCountWindow:" target="Ady-hI-5gd" id="b1K-Ab-c0B"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -671,6 +676,99 @@
                 <customObject id="6f7-a7-6o1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="430"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="zBg-Zo-OgN">
+            <objects>
+                <windowController storyboardIdentifier="Word Count Window Controller" id="rfh-zJ-VLO" sceneMemberID="viewController">
+                    <window key="window" title="Word Count" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="o8i-WU-EHB">
+                        <windowStyleMask key="styleMask" titled="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="300" height="150"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <connections>
+                            <outlet property="delegate" destination="rfh-zJ-VLO" id="7Yh-VQ-p0j"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="jkl-Zu-9uo" kind="relationship" relationship="window.shadowedContentViewController" id="YgL-zV-YIV"/>
+                    </connections>
+                </windowController>
+                <customObject id="O6B-8F-eGU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="430"/>
+        </scene>
+        <!--Word Count View Controller-->
+        <scene sceneID="JkZ-rE-pXF">
+            <objects>
+                <viewController id="jkl-Zu-9uo" customClass="WordCountViewController" customModule="BabyScript" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="hRU-gk-YFh">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Avw-15-DRS">
+                                <rect key="frame" x="18" y="88" width="107" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Paragraph Count" id="RdL-zU-Qr2">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gyh-kV-O5h">
+                                <rect key="frame" x="48" y="113" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Word Count" id="GlU-mC-RvH">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTY-mg-OOA">
+                                <rect key="frame" x="231" y="88" width="51" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="123456" id="9mn-iY-vhb">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="jkl-Zu-9uo" name="value" keyPath="paragraphCount" id="Spx-TU-axS"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2c-Ym-tDr">
+                                <rect key="frame" x="231" y="113" width="51" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="123456" id="cIM-iL-MY2">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="jkl-Zu-9uo" name="value" keyPath="wordCount" id="0LM-v1-buC"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yqD-nv-10G">
+                                <rect key="frame" x="227" y="13" width="59" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="APz-Lg-WSo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="dismissWordCountWindow:" target="jkl-Zu-9uo" id="K09-0q-0PJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="u5w-en-h3w" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="x0v-SO-WEL"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="707"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">

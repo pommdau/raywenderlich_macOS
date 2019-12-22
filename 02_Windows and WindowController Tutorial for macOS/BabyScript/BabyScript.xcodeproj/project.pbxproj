@@ -13,6 +13,7 @@
 		2AA0C69723AF4EA4002D81E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0C69623AF4EA4002D81E4 /* Assets.xcassets */; };
 		2AA0C69A23AF4EA4002D81E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AA0C69823AF4EA4002D81E4 /* Main.storyboard */; };
 		2AA0C6A323AF4F3B002D81E4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0C6A223AF4F3B002D81E4 /* WindowController.swift */; };
+		2AA0C6A523AF663A002D81E4 /* WordCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0C6A423AF663A002D81E4 /* WordCountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2AA0C69B23AF4EA4002D81E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AA0C69C23AF4EA4002D81E4 /* BabyScript.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BabyScript.entitlements; sourceTree = "<group>"; };
 		2AA0C6A223AF4F3B002D81E4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		2AA0C6A423AF663A002D81E4 /* WordCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2AA0C6A223AF4F3B002D81E4 /* WindowController.swift */,
 				2AA0C69623AF4EA4002D81E4 /* Assets.xcassets */,
 				2AA0C69823AF4EA4002D81E4 /* Main.storyboard */,
+				2AA0C6A423AF663A002D81E4 /* WordCountViewController.swift */,
 				2AA0C69B23AF4EA4002D81E4 /* Info.plist */,
 				2AA0C69C23AF4EA4002D81E4 /* BabyScript.entitlements */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA0C6A523AF663A002D81E4 /* WordCountViewController.swift in Sources */,
 				2AA0C69323AF4EA0002D81E4 /* ViewController.swift in Sources */,
 				2AA0C6A323AF4F3B002D81E4 /* WindowController.swift in Sources */,
 				2AA0C69123AF4EA0002D81E4 /* AppDelegate.swift in Sources */,
