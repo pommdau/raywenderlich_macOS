@@ -21,9 +21,7 @@ class WindowController: NSWindowController {
       //2.
       let screenRect = screen.visibleFrame
       //3.
-      print("\(screenRect.maxY) - \(window.frame.height) - \(offsetFromTopOfScreen)")
       let newOriginY = screenRect.maxY - window.frame.height - offsetFromTopOfScreen
-      print("\(newOriginY)")
       //4.
       window.setFrameOrigin(NSPoint(x: offsetFromLeftOfScreen, y: newOriginY))
     }
