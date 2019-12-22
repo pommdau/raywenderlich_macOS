@@ -15,6 +15,13 @@ class Document: NSDocument {
     // Add your subclass-specific initialization here.
   }
 
+  override func save(withDelegate delegate: Any?, didSave didSaveSelector: Selector?, contextInfo: UnsafeMutableRawPointer?) {
+    let userInfo = [NSLocalizedDescriptionKey: "Sorry, no saving implemented in this tutorial. Click \"Don't Save\" to quit."]
+    let error =  NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: userInfo)
+    let alert = NSAlert(error: error)
+    alert.runModal()
+  }
+  
   override class var autosavesInPlace: Bool {
     return false
   }
@@ -37,13 +44,6 @@ class Document: NSDocument {
     // Alternatively, you could remove this method and override read(from:ofType:) instead.
     // If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
     throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-  }
-
-  override func save(withDelegate delegate: Any?, didSave didSaveSelector: Selector?, contextInfo: UnsafeMutableRawPointer?) {
-    let userInfo = [NSLocalizedDescriptionKey: "Sorry, no saving implemented in this tutorial. Click \"Don't Save\" to quit."]
-    let error =  NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: userInfo)
-    let alert = NSAlert(error: error)
-    alert.runModal()
   }
 }
 

@@ -10,10 +10,13 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+  @IBOutlet var text: NSTextView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    text.toggleRuler(nil)
   }
 
   override var representedObject: Any? {

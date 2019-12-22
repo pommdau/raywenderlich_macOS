@@ -680,20 +680,187 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView appearanceType="aqua" fixedFrame="YES" borderType="line" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXA-B2-7dk">
+                            <scrollView appearanceType="aqua" borderType="line" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXA-B2-7dk">
                                 <rect key="frame" x="20" y="20" width="440" height="230"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="OoV-MN-XZ3">
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="OoV-MN-XZ3">
                                     <rect key="frame" x="1" y="1" width="438" height="228"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView ambiguous="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="G6D-Dl-U8C">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="228"/>
+                                        <textView verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsDocumentBackgroundColorChange="YES" allowsImageEditing="YES" usesRuler="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="G6D-Dl-U8C">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="395"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <size key="minSize" width="438" height="228"/>
                                             <size key="maxSize" width="440" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="Rich Text View (NSTextView) - Edit Me!">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="Avenir-Book"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="😋">
+                                                    <attributes>
+                                                        <font key="NSFont" size="24" name="AppleColorEmoji"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">
+Open as many new documents as you wish. 
+
+Add and edit text via the keyboard using the Edit menu (</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Cut, Copy, Paste">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content=" etc.). Modify text attributes via menu items in the “">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Format-&gt;Font">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="”, “">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Format-&gt;Text">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="” menus. To change text color ">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="show the color panel ">
+                                                    <attributes>
+                                                        <color key="NSBackgroundColor" red="0.95294000000000001" green="0.92157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="Avenir-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content">by selecting the “Format-&gt;Font-&gt;Show Colors” menu item. To change a wide range of text attributes (Font, Font Size, Font Typeface etc.) </string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="show the fonts panel by selecting the “Format-&gt;Font-&gt;Show Fonts”">
+                                                    <attributes>
+                                                        <color key="NSBackgroundColor" red="1" green="1" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="14" name="Avenir-Heavy"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content"> menu item. Modify paragraph attributes (including margins, tabs, and Styles)  via the ruler. Drag and drop text and images. Show/Hide the Toolbar via the “View” menu.
+
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                            <tabStops>
+                                                                <textTab alignment="left" location="28.299999237060547">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="56.650001525878906">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="85">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="113.34999847412109">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="141.69999694824219">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="170.05000305175781">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="198.39999389648438">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="226.75">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="255.10000610351562">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="283.45001220703125">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="311.79998779296875">
+                                                                    <options/>
+                                                                </textTab>
+                                                                <textTab alignment="left" location="340.14999389648438">
+                                                                    <options/>
+                                                                </textTab>
+                                                            </tabStops>
+                                                        </paragraphStyle>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment>
+                                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="Chapeau Apple! ">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.85097999999999996" green="0.043139999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="19" name="Avenir-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                                <fragment content="👍">
+                                                    <attributes>
+                                                        <font key="NSFont" size="14" name="AppleColorEmoji"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="21.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
@@ -708,7 +875,16 @@
                                 </scroller>
                             </scrollView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vXA-B2-7dk" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="20" symbolic="YES" id="EMh-cW-xru"/>
+                            <constraint firstItem="vXA-B2-7dk" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="20" symbolic="YES" id="T1N-pc-uQI"/>
+                            <constraint firstAttribute="bottom" secondItem="vXA-B2-7dk" secondAttribute="bottom" constant="20" symbolic="YES" id="aiP-oG-LPq"/>
+                            <constraint firstAttribute="trailing" secondItem="vXA-B2-7dk" secondAttribute="trailing" constant="20" symbolic="YES" id="r4x-e5-rtI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="G6D-Dl-U8C" id="G4N-YB-bP5"/>
+                    </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
