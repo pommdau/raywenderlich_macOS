@@ -67,4 +67,26 @@ extension ZoomedPhotoViewController: UIScrollViewDelegate {
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return imageView
   }
+  
+  // ズームされるたびに呼ばれる
+  func scrollViewDidZoom(_ scrollView: UIScrollView) {
+    updateConstraintsForSize(view.bounds.size)
+  }
+  
+  
+  // MARK:- Helper Methods
+  
+  // ズーム時に画像を中央に表示する
+  func updateConstraintsForSize(_ size: CGSize) {
+  
+    let yOffset = max(0, (size.height - imageView.frame.height) / 2)  // imageViewのほうが大きい場合は0
+    imageViewTopConstraint.constant = yOffset
+    imageViewBottomConstraint.constant = yOffset
+    
+    let xOffset = max(0, (size.width - imageView.frame.width) / 2)
+    imageViewLeadingConstraint.constant = xOffset
+    imageViewTrailingConstraint.constant = xOffset
+      
+    view.layoutIfNeeded()
+  }
 }
