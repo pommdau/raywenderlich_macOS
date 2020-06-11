@@ -53,5 +53,18 @@ class PhotoCommentViewController: UIViewController {
   @IBAction func hideKeyboard(_ sender: AnyObject) {
     nameTextField.endEditing(true)
   }
+  
+  @IBAction func openZoomingController(_ sender: AnyObject) {
+    self.performSegue(withIdentifier: "zooming", sender: nil)
+  }
+    
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let id = segue.identifier,
+      let viewController = segue.destination as? ZoomedPhotoViewController,
+      id == "zooming" {
+      viewController.photoName = photoName
+    }
+  }
+
 
 }

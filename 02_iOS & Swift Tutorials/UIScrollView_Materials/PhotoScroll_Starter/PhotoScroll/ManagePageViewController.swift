@@ -62,4 +62,16 @@ extension ManagePageViewController: UIPageViewControllerDataSource {
     
     return nil
   }
+  
+  
+  // MARK: DataSource Methods for PageControl
+  
+  func presentationCount(for pageViewController: UIPageViewController) -> Int {
+    return photos.count
+  }
+    
+  func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    return currentIndex ?? 0
+  }
+
 }
