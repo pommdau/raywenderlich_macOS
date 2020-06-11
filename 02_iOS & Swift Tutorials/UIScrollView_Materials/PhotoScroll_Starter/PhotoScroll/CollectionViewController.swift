@@ -36,9 +36,10 @@ class CollectionViewController: UICollectionViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let cell = sender as? UICollectionViewCell,
-        let indexPath = collectionView?.indexPath(for: cell),
-        let viewController = segue.destination as? PhotoCommentViewController {
-      viewController.photoName = "photo\(indexPath.row + 1)"
+      let indexPath = collectionView?.indexPath(for: cell),
+      let managePageViewController = segue.destination as? ManagePageViewController {
+      managePageViewController.photos = photos
+      managePageViewController.currentIndex = indexPath.row
     }
   }
 

@@ -42,7 +42,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="1Xv-RL-hti" id="2ul-H5-n5T"/>
-                                    <segue destination="kDi-BP-KjE" kind="show" identifier="showPhotoPage" id="zfX-hS-1N7"/>
+                                    <segue destination="rU9-NZ-H2C" kind="show" identifier="showPhotoPage" id="ncW-Ml-P4b"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -55,7 +55,17 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HG6-cz-zOf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="485"/>
+            <point key="canvasLocation" x="1481" y="474"/>
+        </scene>
+        <!--Manage Page View Controller-->
+        <scene sceneID="0fp-kC-PRJ">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="8" navigationOrientation="horizontal" spineLocation="none" id="rU9-NZ-H2C" customClass="ManagePageViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="znI-mm-4HY"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JYE-jj-lkS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="474"/>
         </scene>
         <!--Zoomed Photo View Controller-->
         <scene sceneID="BWF-Mm-sV7">
@@ -109,12 +119,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSI-tT-12r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3289" y="496"/>
+            <point key="canvasLocation" x="3721" y="504"/>
         </scene>
         <!--Photo Comment View Controller-->
         <scene sceneID="cNs-NU-XhX">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kDi-BP-KjE" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoCommentViewController" automaticallyAdjustsScrollViewInsets="NO" id="kDi-BP-KjE" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="42W-3C-UDj"/>
                         <viewControllerLayoutGuide type="bottom" id="BxL-y5-hpU"/>
@@ -124,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orf-2Q-lQr">
-                                <rect key="frame" x="0.0" y="44" width="340" height="756"/>
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InE-W3-p8p" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="500"/>
@@ -145,6 +155,9 @@
                                                 <rect key="frame" x="8" y="351" width="324" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="hideKeyboard:" destination="kDi-BP-KjE" eventType="primaryActionTriggered" id="ZbF-H8-5By"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -173,12 +186,16 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="orf-2Q-lQr" firstAttribute="leading" secondItem="SSI-9c-rD8" secondAttribute="leading" id="Bff-bo-CtP"/>
                             <constraint firstItem="BxL-y5-hpU" firstAttribute="top" secondItem="orf-2Q-lQr" secondAttribute="bottom" id="Bpb-eW-I4M"/>
                             <constraint firstItem="orf-2Q-lQr" firstAttribute="top" secondItem="42W-3C-UDj" secondAttribute="bottom" id="kyN-pF-FVh"/>
                             <constraint firstAttribute="trailing" secondItem="orf-2Q-lQr" secondAttribute="trailing" id="q3x-ba-EUQ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nSk-uy-r6E" appends="YES" id="esZ-Pj-GWY"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Se0-8T-gAG"/>
                     <size key="freeformSize" width="340" height="800"/>
@@ -189,8 +206,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrs-KZ-xO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nSk-uy-r6E">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="kDi-BP-KjE" id="0JA-Am-H16"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2189" y="544"/>
+            <point key="canvasLocation" x="2954" y="533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uzF-pX-Zex">
