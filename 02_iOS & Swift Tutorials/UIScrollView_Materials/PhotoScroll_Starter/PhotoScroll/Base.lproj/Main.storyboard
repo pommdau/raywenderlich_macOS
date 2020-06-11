@@ -42,7 +42,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="imageView" destination="1Xv-RL-hti" id="2ul-H5-n5T"/>
-                                    <segue destination="Tou-yP-mjQ" kind="show" id="Wlw-9H-VhR"/>
+                                    <segue destination="kDi-BP-KjE" kind="show" identifier="showPhotoPage" id="zfX-hS-1N7"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -66,11 +66,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Tte-qg-mzd"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dBF-SA-UXb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGg-Ok-yug">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo1" translatesAutoresizingMaskIntoConstraints="NO" id="Ve5-7J-0me">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
@@ -109,12 +109,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSI-tT-12r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2133.5999999999999" y="484.40779610194909"/>
+            <point key="canvasLocation" x="3289" y="496"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Comment View Controller-->
         <scene sceneID="cNs-NU-XhX">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kDi-BP-KjE" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kDi-BP-KjE" customClass="PhotoCommentViewController" customModule="PhotoScroll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="42W-3C-UDj"/>
                         <viewControllerLayoutGuide type="bottom" id="BxL-y5-hpU"/>
@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orf-2Q-lQr">
-                                <rect key="frame" x="0.0" y="0.0" width="340" height="800"/>
+                                <rect key="frame" x="0.0" y="44" width="340" height="756"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InE-W3-p8p" userLabel="Container View">
                                         <rect key="frame" x="0.0" y="0.0" width="340" height="500"/>
@@ -180,11 +180,17 @@
                             <constraint firstAttribute="trailing" secondItem="orf-2Q-lQr" secondAttribute="trailing" id="q3x-ba-EUQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Se0-8T-gAG"/>
                     <size key="freeformSize" width="340" height="800"/>
+                    <connections>
+                        <outlet property="imageView" destination="vWc-tg-43e" id="F20-Ou-1fU"/>
+                        <outlet property="nameTextField" destination="cuB-3g-OcY" id="DZy-AT-qhD"/>
+                        <outlet property="scrollView" destination="orf-2Q-lQr" id="iNI-0J-fCA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrs-KZ-xO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3088" y="544.22788605697156"/>
+            <point key="canvasLocation" x="2189" y="544"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uzF-pX-Zex">

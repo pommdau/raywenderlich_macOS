@@ -36,11 +36,12 @@ class CollectionViewController: UICollectionViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let cell = sender as? UICollectionViewCell,
-      let indexPath = collectionView?.indexPath(for: cell),
-      let zoomedPhotoViewController = segue.destination as? ZoomedPhotoViewController {
-      zoomedPhotoViewController.photoName = "photo\(indexPath.row + 1)"
+        let indexPath = collectionView?.indexPath(for: cell),
+        let viewController = segue.destination as? PhotoCommentViewController {
+      viewController.photoName = "photo\(indexPath.row + 1)"
     }
   }
+
 }
 
 // MARK:- UICollectionViewDataSource
